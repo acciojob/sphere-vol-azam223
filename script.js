@@ -1,6 +1,21 @@
-function volume_sphere() {
-    //Write your code here
-  
-} 
+function volume_sphere(event) {
+    event.preventDefault(); // Prevent form submission and page reload
 
-window.onload = document.getElementById('MyForm').onsubmit = volume_sphere;
+    // Get the radius input element
+    const radiusInput = document.getElementById("radius");
+
+    // Get the volume output element
+    const volumeOutput = document.getElementById("volume");
+
+    // Calculate the volume of the sphere
+    const radius = parseFloat(radiusInput.value);
+    const volume = (4/3) * Math.PI * Math.pow(radius, 3);
+
+    // Display the volume in the output field
+    volumeOutput.value = volume.toFixed(2); // Display the volume with two decimal places
+}
+
+window.onload = function () {
+    // Add an event listener to the form for the submit event
+    document.getElementById('MyForm').addEventListener('submit', volume_sphere);
+};
