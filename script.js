@@ -11,8 +11,8 @@ function volume_sphere(event) {
     const radius = parseFloat(radiusInput.value);
     const volume = (4/3) * Math.PI * Math.pow(radius, 3);
 
-    // Display the volume in the output field with two decimal places
-    volumeOutput.value = volume.toFixed(2);
+    // Display the volume in the output field with four decimal places
+    volumeOutput.value = volume.toFixed(4);
 }
 
 window.onload = function () {
